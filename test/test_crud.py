@@ -18,14 +18,14 @@ class TestCRUD(unittest.TestCase):
         cls.driver = webdriver.Chrome(service=service, options=options)
         cls.driver.maximize_window()
 
-        # crear carpetas si no existen
+        # crea carpetas si no existen 
         cls.screenshots_dir = os.path.join(os.getcwd(), "screenshots")
         cls.reports_dir = os.path.join(os.getcwd(), "reports")
         os.makedirs(cls.screenshots_dir, exist_ok=True)
         os.makedirs(cls.reports_dir, exist_ok=True)
 
     def tearDown(self):
-        # Captura de pantalla solo si la prueba falla
+        # captura de pantalla si falla la prueba (creo que funciona)
         failed = False
         result = getattr(self._outcome, 'result', None)
         if result:
