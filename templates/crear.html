@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <title>Crear Usuario</title>
+</head>
+<body>
+    <h1>Crear Usuario</h1>
+    <form method="post">
+        Nombre: <input type="text" name="nombre" required><br>
+        Email: <input type="email" name="email" required><br>
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{{ url_for('index') }}">Volver</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>Lista de Usuarios</title>
+</head>
+<body>
+    <h1>Usuarios</h1>
+    <a href="{{ url_for('crear') }}">Crear nuevo usuario</a>
+    <ul>
+        {% for i, u in enumerate(usuarios) %}
+            <li>
+                {{ u.nombre }} ({{ u.email }}) 
+                - <a href="{{ url_for('editar', id=i) }}">Editar</a> 
+                - <a href="{{ url_for('eliminar', id=i) }}" onclick="return confirm('Eliminar usuario?')">Eliminar</a>
+            </li>
+        {% else %}
+            <li>No hay usuarios aún.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
